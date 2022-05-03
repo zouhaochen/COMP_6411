@@ -15,6 +15,10 @@ public class QuickSortInJava
         ArrayList<Integer> arrayList = new ArrayList<>();
         arrayList = txtToArrayList(randomNumber);
         QuickSort(arrayList, 0, arrayList.size() - 1);
+        for(int i = 0; i < arrayList.size(); i++)
+        {
+            System.out.println(arrayList.get(i));
+        }
     }
 
     /**
