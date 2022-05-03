@@ -2,7 +2,10 @@ package Assignment1;
 
 public class QuickSortInJava
 {
+    public static void main(String[] args)
+    {
 
+    }
     /**
      * Sort the array from small to large
      * @param array the content of the array to sort
