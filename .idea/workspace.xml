@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="baba3f56-6302-4815-9dca-4f843ae606db" name="Default Changelist" comment="" />
+    <list default="true" id="baba3f56-6302-4815-9dca-4f843ae606db" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651589051789</updated>
-      <workItem from="1651589054759" duration="569000" />
+      <workItem from="1651589054759" duration="823000" />
     </task>
     <task id="LOCAL-00001" summary="project initialization">
       <created>1651589774418</created>
@@ -59,7 +68,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651589774418</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="project initialization">
+      <created>1651589906948</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1651589906948</updated>
+    </task>
+    <task id="LOCAL-00003" summary="project initialization">
+      <created>1651590087245</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651590087245</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -70,17 +93,17 @@
     <option name="LAST_COMMIT_MESSAGE" value="project initialization" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="430" y="100" key="CommitChangelistDialog2" timestamp="1651589906840">
+    <state x="430" y="100" key="CommitChangelistDialog2" timestamp="1651590087129">
       <screen x="0" y="25" width="1680" height="963" />
     </state>
-    <state x="430" y="100" key="CommitChangelistDialog2/0.25.1680.963@0.25.1680.963" timestamp="1651589906840" />
+    <state x="430" y="100" key="CommitChangelistDialog2/0.25.1680.963@0.25.1680.963" timestamp="1651590087129" />
     <state x="169" y="107" key="DiffContextDialog" timestamp="1651589748545">
       <screen x="0" y="25" width="1680" height="963" />
     </state>
     <state x="169" y="107" key="DiffContextDialog/0.25.1680.963@0.25.1680.963" timestamp="1651589748545" />
-    <state x="441" y="243" key="Vcs.Push.Dialog.v2" timestamp="1651589836720">
+    <state x="441" y="243" key="Vcs.Push.Dialog.v2" timestamp="1651590093783">
       <screen x="0" y="25" width="1680" height="963" />
     </state>
-    <state x="441" y="243" key="Vcs.Push.Dialog.v2/0.25.1680.963@0.25.1680.963" timestamp="1651589836720" />
+    <state x="441" y="243" key="Vcs.Push.Dialog.v2/0.25.1680.963@0.25.1680.963" timestamp="1651590093783" />
   </component>
 </project>
