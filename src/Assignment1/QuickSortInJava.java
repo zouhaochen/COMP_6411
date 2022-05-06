@@ -49,6 +49,7 @@ public class QuickSortInJava
                 bufferedWriter.flush();
             }
 
+            //write statistics record
             bufferedWriter.newLine();
             bufferedWriter.flush();
             bufferedWriter.write("Statistics record:");
