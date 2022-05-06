@@ -55,7 +55,7 @@ public class QuickSortInJava
             bufferedWriter.write("Statistics record:");
             bufferedWriter.newLine();
             bufferedWriter.flush();
-            bufferedWriter.write("Number of random number in  the list: " + list.length);
+            bufferedWriter.write("Number of random number in the list: " + list.length);
             bufferedWriter.newLine();
             bufferedWriter.flush();
             bufferedWriter.write("Quick sort time in milliseconds: " + (endTime - startTime));
