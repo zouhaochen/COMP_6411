@@ -2,12 +2,15 @@ package Assignment1;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class QuickSortInJava
 {
     //input and output file path
     private static String randomNumberPath = "src/Assignment1/rand.txt";
     private static String outputPath = "src/Assignment1/output.txt";
+
+    private static long iterations = 0;
 
     public static void main(String[] args)
     {
@@ -17,13 +20,21 @@ public class QuickSortInJava
         //use array list to store the random number information
         ArrayList<Integer> arrayList = new ArrayList<>();
         arrayList = txtToArrayList(randomNumber);
-        QuickSort(arrayList, 0, arrayList.size() - 1);
+        int[] list = Arrays.stream(arrayList.toArray(new Integer[0])).mapToInt(Integer::intValue).toArray();
 
-        //output result in console
-        for(int i = 0; i < arrayList.size(); i++)
-        {
-            System.out.println(arrayList.get(i));
-        }
+        //initialize counting data
+        long startTime = 0;
+        long endTime = 0;
+
+        //counting time usage
+        startTime = System.currentTimeMillis();
+        QuickSort(list, 0, list.length - 1);
+        endTime = System.currentTimeMillis();
+
+        //counting memory usage
+        System.gc();
+        Runtime runtimeForQuickSort = Runtime.getRuntime();
+        long usedMemoryForQuickSort = (runtimeForQuickSort.totalMemory() - runtimeForQuickSort.freeMemory());
 
         //write result in the output file
         BufferedWriter bufferedWriter = null;
@@ -33,10 +44,29 @@ public class QuickSortInJava
             bufferedWriter = new BufferedWriter(fileWriter);
             for(int i = 0; i < arrayList.size(); i++)
             {
-                bufferedWriter.write(String.valueOf(arrayList.get(i)));
+                bufferedWriter.write(String.valueOf(list[i]));
                 bufferedWriter.newLine();
                 bufferedWriter.flush();
             }
+
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+            bufferedWriter.write("Statistics record:");
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+            bufferedWriter.write("Number of random number in  the list: " + list.length);
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+            bufferedWriter.write("Quick sort time in milliseconds: " + (endTime - startTime));
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+            bufferedWriter.write("Memory usage: " + usedMemoryForQuickSort);
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+            bufferedWriter.write("Number of iterations: " + iterations);
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+
             bufferedWriter.close();
         }
         catch(IOException e)
@@ -97,46 +127,48 @@ public class QuickSortInJava
 
     /**
      * Sort the array from small to large
-     * @param array the content of the array to sort list
+     * @param list the content of the list to sort
      * @param p the start index of the array list
      * @param r the end index of the array list
      */
-    public static void QuickSort(ArrayList<Integer> array, int p, int r)
+    public static void QuickSort(int[] list, int p, int r)
     {
         if(p < r)
         {
-            int q = Partition(array, p, r);
-            QuickSort(array, p, q-1);
-            QuickSort(array, q+1, r);
+            int q = Partition(list, p, r);
+            QuickSort(list, p, q-1);
+            iterations ++;
+            QuickSort(list, q+1, r);
+            iterations ++;
         }
     }
 
     /**
      * Partition the array into 2 subarray around pivot
-     * @param array the content of the array list
+     * @param list the content of the list
      * @param p the start index of the array list
      * @param r the end index of the array list
      * @return
      */
-    public static int Partition(ArrayList<Integer> array, int p, int r)
+    public static int Partition(int[] list, int p , int r)
     {
-        int x = array.get(r);
+        int x = list[r];
         int i = p - 1;
 
-        for (int j = p; j < r; j ++)
+        for (int j = p ; j < r ;j ++)
         {
-            if(array.get(j) <= x)
+            if(list[j] <= x)
             {
                 i = i + 1;
-                int temp = array.get(i);
-                array.set(i, array.get(j));
-                array.set(j, temp);
+                int temp = list[i];
+                list[i] = list[j];
+                list[j] = temp;
             }
         }
 
-        int exchange = array.get(r);
-        array.set(r, array.get(i + 1));
-        array.set(i + 1, exchange);
+        int exchange = list[r];
+        list[r] = list[i + 1];
+        list[i + 1] = exchange;
         return i + 1;
     }
 }
