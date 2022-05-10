@@ -2,6 +2,8 @@ COMP 6411 Assignment 1
 ==== 
 Quick sort in Java  
 -------
+### Java Environment
+Java 11
 ### How to compile
 1. Download all the .java files;
 2. Open terminal and navigate to `main` folder;
