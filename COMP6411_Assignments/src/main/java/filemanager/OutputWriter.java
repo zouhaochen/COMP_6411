@@ -22,6 +22,10 @@ public class OutputWriter {
     }
 
     public void writeResult() {
+        if (outputPath.startsWith("/")) {
+            outputPath = outputPath.substring(1);
+        }
+
         File file = new File(outputPath);
         if (checkIfNewDirectoryRequired()) {
             file.getParentFile().mkdir();
