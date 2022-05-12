@@ -1,6 +1,6 @@
 COMP 6411 Assignment 1
 ==== 
-Quick sort in Java  
+Quick sort in Java
 -------
 ### Java Environment
 Java 11
@@ -14,12 +14,21 @@ Java 11
    `./out` is optional, which is used to specify the directory for the .class files.
 
 ### How to execute
+#### Using compiled .class file
 1. Complete the compilation as instructed in the previous section;
 2. Open terminal and navigate to `main` folder (or the parent directory of the folder you specify for the .class files
    in the compilation);
-3. Run the command: 
+3. Run the command:
    ```
    java -classpath out:resources assignment1/QuickSort [path/to/input/file]
+   ```
+   `path/to/input/file` is optional, which is used to specify the input file you want to use. If the parameter
+   is not specified, the default file `rand.txt` will be used.
+#### Using the provided executable (.jar file)
+1. Open terminal and navigate to the root folder containing the executable file;
+2. Run the command:
+   ```
+   java -jar quicksort.jar [path/to/input/file]
    ```
    `path/to/input/file` is optional, which is used to specify the input file you want to use. If the parameter
    is not specified, the default file `rand.txt` will be used.
