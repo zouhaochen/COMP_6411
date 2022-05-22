@@ -93,7 +93,7 @@ public class BinarySearchTreePerformanceLog extends PerformanceLog implements Lo
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Statistics are as follows:");
         stringBuilder.append("\nTime to construct a binary search tree (in millisecond): ").append(timeForConstruction);
-        stringBuilder.append("\nMemory usage to construct a binary search tree (in MB): ").append(getUsedMemory());
+        stringBuilder.append("\nMemory usage to construct a binary search tree (in MB): ").append(getUsedMemory() / (1024L * 1024L));
 
         stringBuilder.append("\n");
         stringBuilder.append("\nResult for successful searches:");
