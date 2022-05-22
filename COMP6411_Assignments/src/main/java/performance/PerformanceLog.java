@@ -41,4 +41,9 @@ public class PerformanceLog {
         usedMemory = runtime.totalMemory() - runtime.freeMemory() - preMemory;
     }
 
+    public void resetMemoryData() {
+        preMemory = 0;
+        usedMemory = 0;
+    }
+
 }

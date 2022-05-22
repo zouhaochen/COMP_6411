@@ -14,7 +14,7 @@
     </properties>
 
     <build>
-        <finalName>quicksort</finalName>
+        <finalName>binarysearch</finalName>
         <plugins>
             <plugin>
                 <!-- Build an executable JAR -->
@@ -26,7 +26,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>assignment1.QuickSort</mainClass>
+                            <mainClass>assignment2.BinarySearch</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

@@ -1,5 +1,6 @@
 package filemanager;
 
+import performance.Log;
 import performance.PerformanceLog;
 
 import java.io.BufferedWriter;
@@ -19,6 +20,10 @@ public class OutputWriter {
         this.list = list;
         this.iterations = iterations;
         this.performanceLog = performanceLog;
+    }
+
+    public OutputWriter(String outputPath) {
+        this.outputPath = outputPath;
     }
 
     public void writeResult() {
@@ -62,6 +67,30 @@ public class OutputWriter {
             bufferedWriter.flush();
             bufferedWriter.write("Number of iterations: " + iterations);
             bufferedWriter.newLine();
+            bufferedWriter.flush();
+
+            bufferedWriter.close();
+        } catch (IOException e) {
+            System.out.println("Failed to create the output file.");
+            System.exit(0);
+        }
+    }
+
+    public void writeResult(Log log) {
+        if (outputPath.startsWith("/")) {
+            outputPath = outputPath.substring(1);
+        }
+
+        File file = new File(outputPath);
+        if (checkIfNewDirectoryRequired()) {
+            file.getParentFile().mkdir();
+        }
+
+        try (FileWriter fileWriter = new FileWriter(file)) {
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+            // write sorted numbers
+            bufferedWriter.write(log.formatToOutput());
             bufferedWriter.flush();
 
             bufferedWriter.close();
